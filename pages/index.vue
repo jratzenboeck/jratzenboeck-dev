@@ -13,18 +13,24 @@
 export default {
   async asyncData(context) {
     try {
-      const response = await context.app.$storyapi.get('cdn/stories/home', {
+      const { data } = await context.app.$storyapi.get('cdn/stories/home', {
         version: 'draft',
       })
-      return response.data
+      return { story: data.story }
     } catch (e) {
       console.error(e)
     }
   },
-  data() {
-    return {
-      story: { content: {} },
-    }
+  mounted() {
+    this.$storybridge.on(['input', 'published', 'change'], (event) => {
+      if (event.action === 'input') {
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content
+        }
+      } else {
+        window.location.reload()
+      }
+    })
   },
 }
 </script>
