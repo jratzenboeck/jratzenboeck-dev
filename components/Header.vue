@@ -1,6 +1,6 @@
 <template>
   <div class="text-center p-2">
-    <h2 class="text-2xl">jratzenboeck</h2>
+    <h2 class="text-2xl"><nuxt-link to="/">jratzenboeck</nuxt-link></h2>
     <nav>
       <ul>
         <li class="inline-block mr-4">

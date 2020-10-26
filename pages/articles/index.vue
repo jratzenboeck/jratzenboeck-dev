@@ -1,21 +1,20 @@
 <template>
-  <section class="max-w-lg mx-auto p-2">
+  <section class="max-w-3xl mx-auto p-2">
+    <h1 class="text-4xl my-3">Articles</h1>
     <ul>
       <li v-for="story in stories" :key="story.id">
-        <h3 class="text-lg">{{ story.name }}</h3>
-        <span class="text-sm mr-4">Created at: {{ story.created_at }}</span>
-        <span class="text-sm"
-          >Reading time: {{ story.content.reading_time }}</span
-        >
-        <p>{{ story.content.content }}</p>
-        <button>Read more</button>
+        <ArticleListItem :article-story="story" />
       </li>
     </ul>
   </section>
 </template>
 
 <script>
+import ArticleListItem from '@/components/ArticleListItem.vue'
 export default {
+  components: {
+    ArticleListItem,
+  },
   async asyncData(context) {
     try {
       const response = await context.app.$storyapi.get('cdn/stories', {
