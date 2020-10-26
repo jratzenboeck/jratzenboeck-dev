@@ -1,9 +1,9 @@
 <template>
-  <section v-editable="blok" class="max-w-lg mx-auto p-2">
+  <section v-editable="blok" class="max-w-3xl mx-auto p-2">
     <h3 class="text-xl">{{ blok.headline }}</h3>
     <ul>
       <li v-for="article in featuredArticles" :key="article.id" class="my-4">
-        <h3 class="text-lg">{{ article.name }}</h3>
+        <h4 class="text-lg">{{ article.name }}</h4>
         <span class="text-sm mr-4">Created at: {{ article.created_at }}</span>
         <span class="text-sm"
           >Reading time: {{ article.content.reading_time }}</span
