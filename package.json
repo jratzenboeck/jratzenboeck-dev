@@ -11,7 +11,9 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
+    "@marvr/storyblok-rich-text-vue-renderer": "^2.0.1",
     "@nuxtjs/axios": "^5.12.2",
+    "@vue/composition-api": "^1.0.0-beta.18",
     "core-js": "^3.6.5",
     "date-fns": "^2.16.1",
     "nuxt": "^2.14.6",

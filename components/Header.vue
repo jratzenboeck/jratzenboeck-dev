@@ -6,9 +6,6 @@
         <li class="inline-block mr-4">
           <nuxt-link to="/articles">Articles</nuxt-link>
         </li>
-        <li class="inline-block mr-4">
-          <nuxt-link to="/projects">Projects</nuxt-link>
-        </li>
         <li class="inline-block">
           <nuxt-link to="/about">About</nuxt-link>
         </li>

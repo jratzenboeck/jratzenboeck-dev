@@ -24,37 +24,15 @@
       </svg>
       <span class="text-sm ml-2">Reading time: {{ article.readingTime }}</span>
     </div>
-    <p class="my-2">{{ article.intro }}</p>
-    <nuxt-link
-      :to="article.fullSlug"
-      class="inline-block p-2 border border-gray-500 rounded cursor-pointer"
-    >
-      Read more
-    </nuxt-link>
   </div>
 </template>
 
 <script>
-import { format } from 'date-fns'
 export default {
   props: {
-    articleStory: {
+    article: {
       type: Object,
       required: true,
-    },
-  },
-  computed: {
-    article() {
-      return {
-        title: this.articleStory.name,
-        readingTime: this.articleStory.content.reading_time,
-        createdAt: this.articleStory.created_at,
-        intro: this.articleStory.content.intro,
-        fullSlug: this.articleStory.full_slug,
-      }
-    },
-    articleCreatedAt() {
-      return format(Date.parse(this.article.createdAt), 'dd.MM.yyyy')
     },
   },
 }
