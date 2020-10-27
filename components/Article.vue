@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok" class="max-w-3xl p-2 mx-auto">
-    <h4 class="text-lg my-1">{{ blok.name }}</h4>
+    <h1 class="text-4xl my-2">{{ blok.name }}</h1>
 
     <div class="flex items-center">
       <svg
@@ -27,19 +27,25 @@
       >
     </div>
 
-    <article class="my-4">
+    <article class="prose lg:prose-lg">
       <rich-text-renderer :document="blok.content.full_text" />
     </article>
   </div>
 </template>
 
 <script>
+import hljs from 'highlight.js'
+import 'highlight.js/styles/monokai-sublime.css'
+
 export default {
   props: {
     blok: {
       type: Object,
       required: true,
     },
+  },
+  mounted() {
+    hljs.initHighlighting()
   },
 }
 </script>
