@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4 class="text-lg my-1">{{ article.title }}</h4>
+    <h4 class="text-lg my-1">{{ title }}</h4>
 
     <div class="flex items-center">
       <svg
@@ -22,17 +22,31 @@
           d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-7.59V4h2v5.59l3.95 3.95-1.41 1.41L9 10.41z"
         />
       </svg>
-      <span class="text-sm ml-2">Reading time: {{ article.readingTime }}</span>
+      <span class="text-sm ml-2">Reading time: {{ readingTime }}</span>
     </div>
   </div>
 </template>
 
 <script>
+import { format } from 'date-fns'
 export default {
   props: {
-    article: {
-      type: Object,
+    title: {
+      type: String,
       required: true,
+    },
+    readingTime: {
+      type: String,
+      required: true,
+    },
+    createdAt: {
+      type: String,
+      required: true,
+    },
+  },
+  computed: {
+    articleCreatedAt() {
+      return format(Date.parse(this.createdAt), 'dd.MM.yyyy')
     },
   },
 }
