@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4 class="text-lg my-1">{{ title }}</h4>
+    <h4 class="text-4xl my-1">{{ title }}</h4>
 
     <div class="flex items-center">
       <svg

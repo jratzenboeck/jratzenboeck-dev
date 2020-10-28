@@ -1,13 +1,9 @@
 <template>
-  <article class="my-4">
-    <p
-      v-for="(paragraph, index) in blok.content.content"
-      :key="index"
-      class="my-2"
-    >
-      <span v-html="paragraph.content[0].text"></span>
-    </p>
-  </article>
+  <section>
+    <article class="my-4 prose lg:prose-lg">
+      <rich-text-renderer :document="blok.content.content" />
+    </article>
+  </section>
 </template>
 
 <script>
