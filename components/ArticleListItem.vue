@@ -8,7 +8,7 @@
     <p class="my-2">{{ article.intro }}</p>
     <nuxt-link
       :to="article.fullSlug"
-      class="inline-block p-2 border border-gray-500 rounded cursor-pointer"
+      class="inline-block py-3 px-5 border text-white rounded-full cursor-pointer bg-gradient-to-r from-light to-dark hover:bg-light hover:bg-none"
     >
       Read more
     </nuxt-link>
@@ -17,6 +17,7 @@
 
 <script>
 import ArticleHeader from '@/components/ArticleHeader.vue'
+
 export default {
   components: {
     ArticleHeader,
