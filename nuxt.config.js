@@ -21,7 +21,6 @@ export default {
     '~/plugins/components',
     '~/plugins/composition-api.js',
     '~/plugins/rich-text-renderer.js',
-    '~/plugins/ga.client.js',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
