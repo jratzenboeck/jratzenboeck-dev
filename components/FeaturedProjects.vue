@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok" class="max-w-3xl mx-auto p-2">
-    <h3 class="text-xl">{{ blok.title }}</h3>
+    <h3 class="text-xl uppercase">{{ blok.title }}</h3>
     <ul>
       <li v-for="project in featuredProjects" :key="project.id" class="my-4">
         <h4 class="text-lg">

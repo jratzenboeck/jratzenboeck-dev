@@ -21,6 +21,7 @@ export default {
     '~/plugins/components',
     '~/plugins/composition-api.js',
     '~/plugins/rich-text-renderer.js',
+    '~/plugins/ga.client.js',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -43,6 +44,50 @@ export default {
       {
         accessToken: 'u0AhKfD6Ac52J8Vqfgl6xwtt',
         cacheProvider: 'memory',
+      },
+    ],
+    [
+      'nuxt-cookie-control',
+      {
+        controlButton: false,
+        colors: {
+          barBackground: '#a0aec0',
+          barButtonColor: '#fff',
+          barButtonBackground: '#1565c0',
+          barButtonHoverBackground: '#003c8f',
+          modalButtonBackground: '#1565c0',
+          modalButtonHoverBackground: '#003c8f',
+          checkboxActiveBackground: '#1565c0',
+          checkboxInactiveBackground: '#a0aec0',
+          checkboxActiveCircleBackground: '#003c8f',
+          checkboxInactiveCircleBackground: '#fff',
+        },
+        necessary: [
+          {
+            name: 'Default Cookies',
+            description: 'Used for cookie control.',
+            cookies: [
+              'cookie_control_consent',
+              'cookie_control_enabled_cookies',
+            ],
+          },
+        ],
+        optional: [
+          {
+            name: 'Google Analytics',
+            description: 'Used for statistical anyalysis about webpage visits.',
+            src: 'https://www.googletagmanager.com/gtag/js?id=UA-42874473-3',
+            async: true,
+            cookies: ['_gtag'],
+            accepted: () => {
+              window.dataLayer = window.dataLayer || []
+              window.dataLayer.push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js',
+              })
+            },
+          },
+        ],
       },
     ],
   ],

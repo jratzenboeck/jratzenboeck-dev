@@ -1,6 +1,6 @@
 <template>
   <section v-editable="blok" class="max-w-3xl mx-auto p-2">
-    <h3 class="text-xl">{{ blok.headline }}</h3>
+    <h3 class="text-xl uppercase">{{ blok.headline }}</h3>
     <ul>
       <li v-for="story in featuredArticles" :key="story.id" class="my-4">
         <ArticleListItem :article-story="story" />
