@@ -1,6 +1,9 @@
 module.exports = {
   future: {},
-  purge: [],
+  purge: {
+    mode: 'all',
+    content: ['pages/articles/*.vue'],
+  },
   theme: {
     extend: {
       container: {

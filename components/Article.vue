@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="max-w-3xl p-2 mx-auto">
+  <div v-editable="blok" class="max-w-3xl p-2 mt-4 mx-auto">
     <ArticleHeader
       :title="blok.name"
       :reading-time="blok.content.reading_time"
