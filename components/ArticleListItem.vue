@@ -3,7 +3,7 @@
     <ArticleHeader
       :title="article.title"
       :reading-time="article.readingTime"
-      :created-at="article.createdAt"
+      :created-at="article.publishedAtOverwritten || article.createdAt"
     />
     <p class="my-2">{{ article.intro }}</p>
     <nuxt-link
@@ -36,6 +36,7 @@ export default {
         createdAt: this.articleStory.created_at,
         intro: this.articleStory.content.intro,
         fullSlug: this.articleStory.full_slug,
+        publishedAtOverwritten: this.articleStory.content.published,
       }
     },
   },
