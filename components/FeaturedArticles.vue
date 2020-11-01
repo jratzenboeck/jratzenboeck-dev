@@ -29,7 +29,7 @@ export default {
       })
       this.featuredArticles = data.stories
     } catch (e) {
-      console.error(e)
+      //
     }
   },
   data() {

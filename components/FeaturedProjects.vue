@@ -28,7 +28,7 @@ export default {
       })
       this.featuredProjects = data.stories.map((story) => story.content)
     } catch (e) {
-      console.error(e)
+      //
     }
   },
   data() {
