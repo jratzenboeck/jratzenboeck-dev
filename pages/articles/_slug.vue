@@ -20,7 +20,17 @@ export default {
       )
       return { story: data.story }
     } catch (e) {
-      console.error(e)
+      if (e.response.status === 404) {
+        context.error({
+          statusCode: 404,
+          message: 'Article does not exist.',
+        })
+      } else {
+        context.error({
+          statusCode: e.response.status,
+          message: 'Oops something went wrong.',
+        })
+      }
     }
   },
   mounted() {

@@ -46,7 +46,9 @@ export default {
   },
   computed: {
     articleCreatedAt() {
-      return format(Date.parse(this.createdAt), 'dd.MM.yyyy')
+      const dateParts = this.createdAt.split(/[^0-9]/)
+      const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
+      return format(date, 'dd.MM.yyyy')
     },
   },
 }

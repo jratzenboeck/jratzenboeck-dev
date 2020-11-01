@@ -15,6 +15,16 @@ module.exports = {
         dark: '#003c8f',
         white: '#fff',
       },
+      typography: {
+        default: {
+          css: {
+            code: {
+              'margin-top': '-70px',
+              'margin-bottom': '-70px',
+            },
+          },
+        },
+      },
     },
   },
   variants: {
