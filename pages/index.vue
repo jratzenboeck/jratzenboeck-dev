@@ -10,12 +10,11 @@
 </template>
 
 <script>
+import { get, sync } from '@/services/api'
 export default {
   async asyncData(context) {
     try {
-      const { data } = await context.app.$storyapi.get('cdn/stories/home', {
-        version: 'draft',
-      })
+      const data = await get(context, '/home')
       return { story: data.story }
     } catch (e) {
       if (e.response.status === 404) {
@@ -32,15 +31,7 @@ export default {
     }
   },
   mounted() {
-    this.$storybridge.on(['input', 'published', 'change'], (event) => {
-      if (event.action === 'input') {
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
-        }
-      } else {
-        window.location.reload()
-      }
-    })
+    sync(this.$storybridge)
   },
 }
 </script>

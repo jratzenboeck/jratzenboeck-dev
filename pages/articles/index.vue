@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { get } from '@/services/api'
 import ArticleListItem from '@/components/ArticleListItem.vue'
 export default {
   components: {
@@ -18,13 +19,19 @@ export default {
   },
   async asyncData(context) {
     try {
-      const response = await context.app.$storyapi.get('cdn/stories', {
-        version: 'draft',
-        starts_with: 'articles/',
-      })
-      return response.data
+      return await get(context, '', { starts_with: 'articles/' })
     } catch (e) {
-      //
+      if (e.response.status === 404) {
+        context.error({
+          statusCode: 404,
+          message: 'Page does not exist.',
+        })
+      } else {
+        context.error({
+          statusCode: e.response.status,
+          message: 'Oops something went wrong.',
+        })
+      }
     }
   },
   data() {

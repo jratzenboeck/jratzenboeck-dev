@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { get, sync } from '@/services/api'
 import Article from '@/components/Article.vue'
 export default {
   components: {
@@ -12,13 +13,7 @@ export default {
   },
   async asyncData(context) {
     try {
-      const { data } = await context.app.$storyapi.get(
-        `cdn/stories/articles/${context.params.slug}`,
-        {
-          version: 'draft',
-        }
-      )
-      return { story: data.story }
+      return await get(context, `/articles/${context.params.slug}`)
     } catch (e) {
       if (e.response.status === 404) {
         context.error({
@@ -34,15 +29,7 @@ export default {
     }
   },
   mounted() {
-    this.$storybridge.on(['input', 'published', 'change'], (event) => {
-      if (event.action === 'input') {
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
-        }
-      } else {
-        window.location.reload()
-      }
-    })
+    sync(this.$storybridge)
   },
 }
 </script>
