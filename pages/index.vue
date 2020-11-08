@@ -14,8 +14,7 @@ import { get, sync } from '@/services/api'
 export default {
   async asyncData(context) {
     try {
-      const data = await get(context, '/home')
-      return { story: data.story }
+      return await get(context, '/home')
     } catch (e) {
       if (e.response.status === 404) {
         context.error({

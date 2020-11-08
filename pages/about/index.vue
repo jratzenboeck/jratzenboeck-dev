@@ -32,5 +32,18 @@ export default {
   mounted() {
     sync(this.$storybridge)
   },
+  head() {
+    return {
+      title: 'About',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'A view behind the scenes of Jürgen Ratzenböck. An introduction about his profession as Softare Engineer and his interests outside the IT world.',
+        },
+      ],
+    }
+  },
 }
 </script>

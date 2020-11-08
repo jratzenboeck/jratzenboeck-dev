@@ -28,8 +28,25 @@ export default {
       }
     }
   },
+  computed: {
+    metaDescription() {
+      return `${this.story.content.intro.substr(0, 150)} ...`
+    },
+  },
   mounted() {
     sync(this.$storybridge)
+  },
+  head() {
+    return {
+      title: this.story.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.metaDescription,
+        },
+      ],
+    }
   },
 }
 </script>

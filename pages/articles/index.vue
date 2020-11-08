@@ -34,5 +34,18 @@ export default {
       }
     }
   },
+  head() {
+    return {
+      title: 'Articles',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Latest articles on creating high-quality Software, usage of modern web technologies to enable great developer experience and best practices to enhance your daily life as a software developer.',
+        },
+      ],
+    }
+  },
 }
 </script>

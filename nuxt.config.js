@@ -4,11 +4,17 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'jratzenboeck',
+    title: 'Blog about high-quality software engineering',
+    titleTemplate: '%s - jratzenboeck',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Jürgen Ratzenböck blogs about creating high-quality Software. He writes about how to create sustainable code bases, ease developer experience and make developers daily work better.',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
