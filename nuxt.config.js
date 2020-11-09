@@ -1,5 +1,7 @@
 import StoryblokClient from 'storyblok-js-client'
 
+const storyblokAccessToken = 'u0AhKfD6Ac52J8Vqfgl6xwtt'
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -50,7 +52,7 @@ export default {
     [
       'storyblok-nuxt',
       {
-        accessToken: 'u0AhKfD6Ac52J8Vqfgl6xwtt',
+        accessToken: storyblokAccessToken,
         cacheProvider: 'memory',
       },
     ],
@@ -62,11 +64,10 @@ export default {
     exclude: ['/privacy-policy', '/projects/**', '/home'],
     routes: async () => {
       const Storyblok = new StoryblokClient({
-        accessToken: 'u0AhKfD6Ac52J8Vqfgl6xwtt',
+        accessToken: storyblokAccessToken,
       })
       const { data } = await Storyblok.get('cdn/stories', {
         starts_with: 'articles',
-        version: 'draft',
       })
       return data.stories.map((story) => story.full_slug)
     },
@@ -80,5 +81,16 @@ export default {
 
   loading: {
     color: '#1565c0',
+  },
+
+  generate: {
+    exclude: ['/projects/**', '/home'],
+    async routes() {
+      const Storyblok = new StoryblokClient({
+        accessToken: storyblokAccessToken,
+      })
+      const { data } = await Storyblok.get('cdn/stories')
+      return data.stories.map((story) => story.full_slug)
+    },
   },
 }
