@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="showBanner"
-    class="p-4 flex justify-between items-end bg-gray-700 text-white w-full fixed left-0 bottom-0"
+    class="p-4 md:flex md:justify-between md:items-end bg-gray-700 text-white w-full fixed left-0 bottom-0"
   >
     <section class="mr-6">
       <h3 class="text-2xl">Cookies</h3>
@@ -11,8 +11,10 @@
         offer.
       </p>
     </section>
-    <section class="flex">
-      <button class="text-sm hover:underline mr-4">Deny</button>
+    <section class="flex justify-end md:justify-start">
+      <button class="text-sm hover:underline mr-4" @click="showBanner = false">
+        Deny
+      </button>
       <button
         class="bg-light hover:bg-dark py-2 px-4 rounded-full w-40"
         @click="confirmCookies"
