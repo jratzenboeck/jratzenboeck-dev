@@ -1,3 +1,5 @@
+import StoryblokClient from 'storyblok-js-client'
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -52,11 +54,31 @@ export default {
         cacheProvider: 'memory',
       },
     ],
+    '@nuxtjs/sitemap',
   ],
+
+  sitemap: {
+    hostname: 'https://www.jratzenboeck.com',
+    exclude: ['/privacy-policy', '/projects/**', '/home'],
+    routes: async () => {
+      const Storyblok = new StoryblokClient({
+        accessToken: 'u0AhKfD6Ac52J8Vqfgl6xwtt',
+      })
+      const { data } = await Storyblok.get('cdn/stories', {
+        starts_with: 'articles',
+        version: 'draft',
+      })
+      return data.stories.map((story) => story.full_slug)
+    },
+  },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+
+  loading: {
+    color: '#1565c0',
+  },
 }

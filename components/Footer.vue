@@ -3,8 +3,10 @@
     class="p-2 text-center flex flex-col-reverse md:justify-between md:flex-row items-center bg-gray-200"
   >
     <span class="mt-2 md:mt-0"
-      >© {{ new Date().getFullYear() }} Jürgen Ratzenböck, All rights
-      reserved</span
+      >© {{ new Date().getFullYear() }} Jürgen Ratzenböck, All rights reserved -
+      <nuxt-link to="/privacy-policy" class="underline"
+        >Privacy Policy</nuxt-link
+      ></span
     >
     <ul class="flex">
       <li class="inline-block mr-3">
