@@ -24,7 +24,6 @@ export default {
   async fetch() {
     try {
       const { data } = await this.$storyapi.get('cdn/stories', {
-        version: 'draft',
         by_uuids: this.blok.articles.join(','),
       })
       this.featuredArticles = data.stories

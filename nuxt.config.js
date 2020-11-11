@@ -90,7 +90,9 @@ export default {
         accessToken: storyblokAccessToken,
       })
       const { data } = await Storyblok.get('cdn/stories')
-      return data.stories.map((story) => story.full_slug)
+      return data.stories
+        .map((story) => story.full_slug)
+        .filter((slug) => slug !== 'home')
     },
   },
 }

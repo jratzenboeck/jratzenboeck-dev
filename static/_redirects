@@ -1,3 +1,17 @@
 # Redirects from what the browser requests to what we serve
 /web/2017/07/29/blogging-like-a-hacker.html /articles/blogging-like-a-hacker
 /devops/2017/08/08/hosting-on-github-pages.html /articles/jekyll-hosting
+/web/2017/08/18/phantomjs.html /articles/phantom-js
+/web/2017/09/10/anglar-systemjs-gulp.html /articles/angular-2-app-with-systemjs-and-gulp
+/machine%20learning/2017/10/02/weka.html /articles/weka-intro
+/machine%20learning/2017/10/22/weka-java.html /articles/use-weka-in-your-java-project
+/web/2017/11/05/itcss.html /articles/itcss 
+/web/2017/12/02/web-performance.html /articles/page-speed-checklist-for-web-developers
+/web/2018/01/06/exiting-callback-hell.html /articles/exiting-the-callback-hell-in-javascript
+/tools/2018/02/08/git-tips-tricks.html /articles/neat-git-aliases
+/javascript/2018/03/26/emberjs-first-steps.html /articles/first-steps-with-ember-js
+/tools/2018/04/13/dotfiles.html /articles/osx-setup-with-dotfiles
+/web/2018/04/28/css-grid.html /articles/essentials-of-css-grid
+/web/2018/06/09/stylelint.html /articles/getting-started-with-stylelint
+/web/2018/07/22/mockery.html /articles/mockery-intro
+/web/2019/02/17/vuejs-amsterdam.html /articles/js-festival-in-amsterdam
