@@ -3,7 +3,9 @@
     <ArticleHeader
       :title="blok.name"
       :reading-time="blok.content.reading_time"
-      :published-at="blok.content.published || blok.published_at"
+      :published-at="
+        blok.content.published || blok.published_at || blok.created_at
+      "
     />
     <article class="prose lg:prose-lg">
       <rich-text-renderer :document="blok.content.full_text" />

@@ -33,7 +33,7 @@ export default {
       return {
         title: this.articleStory.name,
         readingTime: this.articleStory.content.reading_time,
-        publishedAt: this.articleStory.published_at,
+        publishedAt: this.articleStory.published_at || new Date().toISOString(),
         intro: this.articleStory.content.intro,
         fullSlug: this.articleStory.full_slug,
         publishedAtOverwritten: this.articleStory.content.published,
