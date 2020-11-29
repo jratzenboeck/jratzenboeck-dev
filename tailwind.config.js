@@ -2,7 +2,7 @@ module.exports = {
   future: {},
   purge: {
     mode: 'all',
-    content: ['pages/articles/*.vue'],
+    content: ['pages/**/*.vue'],
   },
   theme: {
     extend: {
@@ -14,6 +14,9 @@ module.exports = {
         light: '#1565c0',
         dark: '#003c8f',
         white: '#fff',
+        gray: {
+          200: '#edf2f7',
+        },
       },
       typography: {
         default: {
