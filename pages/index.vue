@@ -30,7 +30,7 @@ export default {
     }
   },
   mounted() {
-    sync(this.$storybridge)
+    sync(this.$storybridge, this.story)
   },
 }
 </script>

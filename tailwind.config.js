@@ -19,7 +19,7 @@ module.exports = {
         },
       },
       typography: {
-        default: {
+        DEFAULT: {
           css: {
             code: {
               'margin-top': '-70px',

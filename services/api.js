@@ -8,11 +8,11 @@ async function get(context, route, params = {}) {
   return data
 }
 
-function sync(storyblokBridge) {
+function sync(storyblokBridge, story) {
   storyblokBridge.on(['input', 'published', 'change'], (event) => {
     if (event.action === 'input') {
-      if (event.story.id === this.story.id) {
-        this.story.content = event.story.content
+      if (event.story.id === story.id) {
+        story.content = event.story.content
       }
     } else {
       window.location.reload()
